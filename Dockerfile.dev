@@ -1,0 +1,13 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json ./
+RUN npm install
+# COPY ./ ./  #Not needed, when you use Docker Compose
+
+CMD [ "npm", "run", "start" ]
+
+# TO BUILD and RUN the app, follow the below 2 steps...
+# apples-MBP:frontend shandocker build -t shanvel26/frontend -f Dockerfile.dev .
+# apples-MBP:frontend shan$ docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app shanvel26/frontend
