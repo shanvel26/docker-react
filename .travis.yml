@@ -6,7 +6,7 @@ services:
 before_install:
   - docker build -t shanvel26/docker-react -f Dockerfile.dev .
 
-#script:
+#script: 
 #  - docker run -e CI=true shanvel26/docker-react npm run test -- --coverage
 
 deploy:
